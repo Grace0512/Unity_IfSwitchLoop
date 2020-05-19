@@ -5,21 +5,23 @@ public class HPSlider : MonoBehaviour
 {
     public Slider HPslider;
     public Text HPText;
-    public float HP;
-   
+   private float HP;
+
+    public float HP1 { get => HP; set => HP = value; }
+
     void Start()
     {
         HPslider.minValue = 0;
         HPslider.maxValue = 100;
-        HP = HPslider.value;
+        HP1 = HPslider.value;
     }
 
     // Update is called once per frame
     void Update()
     {
         // 判斷目前滑桿血量
-        HP = HPslider.value;
-        HPControl(HP);
+        HP1 = HPslider.value;
+        HPControl(HP1);
     }
 
     void HPControl(float HP)
